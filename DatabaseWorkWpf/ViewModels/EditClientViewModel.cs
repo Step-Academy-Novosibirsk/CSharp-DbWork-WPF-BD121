@@ -1,50 +1,13 @@
-﻿using DatabaseWorkWpf.Commands;
-using DatabaseWorkWpf.EventArgs;
-using DatabaseWorkWpf.Models;
+﻿using DatabaseWorkWpf.Models;
+using DatabaseWorkWpf.Mvvm.Base;
 using DatabaseWorkWpf.ViewModels.Base;
 
 namespace DatabaseWorkWpf.ViewModels;
 
-public class EditClientViewModel : AbstractViewModel
+public class EditClientViewModel : AbstractModelEditorViewModel<Client>
 {
-    public Client? Client { get; set; }
-
-    public EditClientViewModel()
+    public EditClientViewModel(IWindowManager windowManager) : base(windowManager)
     {
-        Client = new Client();
+        Model = new Client();
     }
-    public bool HasSaved { get; set; }
-
-    #region Commands
-
-    public ActionCommand SaveCommand => new(Save);
-    public ActionCommand CloseCommand => new(Close);
-
-    #endregion
-
-    #region Constructors
-
-    public EditClientViewModel(Client? client=null)
-    {
-        Client = client;
-    }
-
-    #endregion
-
-    #region Private Methods
-
-    private void Save()
-    {
-        HasSaved = true;
-        Close();
-    }
-
-    private void Close() => Closed?.Invoke(this, new CloseEventArgs());
-    #endregion
-
-    #region Events
-
-    public event CloseEventHandeler? Closed;
-
-    #endregion
 }

@@ -2,8 +2,5 @@
 
 public partial class ClientsListView
 {
-    public ClientsListView()
-    {
-        InitializeComponent();
-    }
+    public ClientsListView() => InitializeComponent();
 }

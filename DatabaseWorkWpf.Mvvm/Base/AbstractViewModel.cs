@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using DatabaseWorkWpf.Utils;
+using DatabaseWorkWpf.Mvvm.Utils;
 
-namespace DatabaseWorkWpf.ViewModels.Base;
+namespace DatabaseWorkWpf.Mvvm.Base;
 
 public class AbstractViewModel : INotifyPropertyChanged
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace DatabaseWorkWpf.Commands;
+namespace DatabaseWorkWpf.Mvvm.Commands;
 
 public class ActionCommand : ICommand
 {

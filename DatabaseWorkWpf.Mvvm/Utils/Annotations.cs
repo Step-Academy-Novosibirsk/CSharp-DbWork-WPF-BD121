@@ -22,7 +22,7 @@ SOFTWARE. */
 
 #nullable disable
 
-using System;
+
 
 // ReSharper disable UnusedType.Global
 
@@ -34,7 +34,7 @@ using System;
 // ReSharper disable MemberCanBeProtected.Global
 // ReSharper disable InconsistentNaming
 
-namespace DatabaseWorkWpf.Utils
+namespace DatabaseWorkWpf.Mvvm.Utils
 {
   /// <summary>
   /// Indicates that the value of the marked element could be <c>null</c> sometimes,
