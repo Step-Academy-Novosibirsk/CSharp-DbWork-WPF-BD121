@@ -1,2 +1,6 @@
 /DatabaseWorkWpf/bin/
 /DatabaseWorkWpf/obj/
+/DatabaseWorkWpf.Mvvm/bin/
+/DatabaseWorkWpf.Mvvm/obj/
+/DatabaseWorkWpf.Mvvm.Windows/bin
+/DatabaseWorkWpf.Mvvm.Windows/obj
