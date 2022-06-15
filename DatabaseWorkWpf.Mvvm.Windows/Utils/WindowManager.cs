@@ -15,14 +15,15 @@ public class WindowManager : IWindowManager
     }
     public void ShowDialog<T>(T viewModel)
     {
+        if (viewModel == null)
+            return;
         var mainAssembly = Application.Current?.MainWindow?.GetType().Assembly;
         if (mainAssembly == null) return;
-        var viewType = ViewLocator.LocateView(typeof(T), mainAssembly);
+        var viewType = ViewLocator.LocateView(viewModel.GetType(), mainAssembly);
         var view = viewType?.GetConstructor(Type.EmptyTypes)?.Invoke(Array.Empty<object>());
         if (view is not Window window) return;
         _currentWindow = window;
-        if(viewModel!=null)
-            window.DataContext = viewModel;
+        window.DataContext = viewModel;
         window.ShowDialog();
     }
 

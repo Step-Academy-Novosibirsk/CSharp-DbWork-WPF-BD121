@@ -50,6 +50,7 @@ public abstract class AbstractModelsListViewModel<T> : AbstractViewModel where T
     }
     private void Add()
     {
+        _editorViewModel.Model = Activator.CreateInstance<T>();
         _windowManager.ShowDialog(_editorViewModel);
         if (!_editorViewModel.HasSaved) return;
         var model = _editorViewModel.Model;
@@ -58,7 +59,7 @@ public abstract class AbstractModelsListViewModel<T> : AbstractViewModel where T
         Context.SaveChanges();
         UpdateCollection();
     }
-    private void EditUser()
+    private void Edit()
     {
         if(SelectedModel ==null)
             return;
@@ -89,7 +90,7 @@ public abstract class AbstractModelsListViewModel<T> : AbstractViewModel where T
     #region Commands
 
     public ActionCommand RemoveCommand => new(Remove);
-    public ActionCommand EditCommand => new(EditUser);
+    public ActionCommand EditCommand => new(Edit);
     public ActionCommand AddCommand => new(Add);
 
     #endregion

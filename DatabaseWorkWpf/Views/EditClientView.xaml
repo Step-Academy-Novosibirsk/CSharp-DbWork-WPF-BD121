@@ -24,13 +24,13 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Имя:" />
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Client.Name, Mode=TwoWay}" />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Model.Name, Mode=TwoWay}" />
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Телефон:" />
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Client.Phone, Mode=TwoWay}" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Model.Phone, Mode=TwoWay}" />
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Email:" />
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Client.Email, Mode=TwoWay}" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Model.Email, Mode=TwoWay}" />
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Адрес:" />
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Client.Address, Mode=TwoWay}" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Model.Address, Mode=TwoWay}" />
         <Button x:Name="SaveButton" Grid.Row="4" Grid.Column="0" Content="Сохранить" Command="{Binding SaveCommand}"/>
         <Button x:Name="CloseButton" Grid.Row="4" Grid.Column="1" Content="Закрыть" Command="{Binding CloseCommand}"/>
     </Grid>

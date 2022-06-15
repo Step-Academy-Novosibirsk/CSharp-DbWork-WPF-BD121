@@ -10,7 +10,8 @@ public class MainWindowViewModel : AbstractViewModel
     #region Commands
 
     public ActionCommand OpenClientsCommand => new(OpenClients);
-    public ActionCommand OpenManagersCommand => new ActionCommand(OpenManagers);
+    public ActionCommand OpenManagersCommand => new(OpenManagers);
+    public ActionCommand OpenSalesCommand => new(OpenSales);
     
     #endregion
 
@@ -20,6 +21,7 @@ public class MainWindowViewModel : AbstractViewModel
     private readonly ClientsListViewModel _clientsListViewModel;
     private readonly ApplicationContext _context;
     private readonly ManagersListViewModel _managersListViewModel;
+    private readonly SalesListViewModel _salesListViewModel;
 
     #endregion
 
@@ -31,6 +33,7 @@ public class MainWindowViewModel : AbstractViewModel
         _context = new ApplicationContext();
         _clientsListViewModel = new ClientsListViewModel(_windowManager,_context);
         _managersListViewModel = new ManagersListViewModel(_windowManager, _context);
+        _salesListViewModel = new SalesListViewModel(_windowManager, _context);
 
     }
 
@@ -40,6 +43,7 @@ public class MainWindowViewModel : AbstractViewModel
 
     private void OpenClients() => _windowManager.ShowDialog(_clientsListViewModel);
     private void OpenManagers() => _windowManager.ShowDialog(_managersListViewModel);
+    private void OpenSales() => _windowManager.ShowDialog(_salesListViewModel);
 
 
     #endregion

@@ -14,6 +14,7 @@
                 <MenuItem Header="Меню">
                         <MenuItem Header="Клиенты" Command="{Binding OpenClientsCommand}" />
                         <MenuItem Header="Менеджеры" Command="{Binding OpenManagersCommand}" />
+                        <MenuItem Header="Продажи" Command="{Binding OpenSalesCommand}" />
                 </MenuItem>
         </Menu>
 

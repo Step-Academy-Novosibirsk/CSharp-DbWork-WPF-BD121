@@ -10,4 +10,7 @@ public abstract class PersonModel : ModelBase
     [NotNull]
     [StringLength(11)]
     public string? Phone { get; set; }
+
+    public override string ToString() => Name ?? "";
+
 }

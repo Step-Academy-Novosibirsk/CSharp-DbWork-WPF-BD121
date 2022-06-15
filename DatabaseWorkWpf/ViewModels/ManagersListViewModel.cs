@@ -14,7 +14,11 @@ public class ManagersListViewModel : AbstractModelsListViewModel<Manager>
     {
     }
 
-    protected override void UpdateCollection() =>
+    protected override void UpdateCollection()
+    {
         Models = new ObservableCollection<Manager>(Context.Managers?.ToList() ?? new List<Manager>());
+        OnPropertyChanged(nameof(Models));
+    }
+        
 
 }

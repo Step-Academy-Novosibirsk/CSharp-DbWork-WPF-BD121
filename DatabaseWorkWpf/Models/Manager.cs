@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using DatabaseWorkWpf.Models.Base;
 
 namespace DatabaseWorkWpf.Models;
@@ -11,6 +13,8 @@ public class Manager: PersonModel
 
     public decimal Salary { get; set; }
     public double Bonus { get; set; }
+    [InverseProperty("Manager")]
+    public List<Sale?>? Sales { get; set; }
 
     public override object Clone() => new Manager()
     {
@@ -19,7 +23,7 @@ public class Manager: PersonModel
         Post = Post,
         Phone = Phone,
         Salary = Salary,
-        Bonus = Bonus
+        Bonus = Bonus,
+        Sales = Sales?.Select(s => s?.Clone() as Sale).ToList()
     };
-
 }
